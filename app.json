@@ -1,0 +1,10 @@
+{
+    "expo": {
+      "name": "API Frontend",
+      "slug": "api-frontend", 
+      "platforms": ["ios", "android", "web"],
+      "web": {
+        "bundler": "metro"
+      }
+    }
+  }
