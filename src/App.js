@@ -52,7 +52,7 @@ import { View, StyleSheet, StatusBar, SafeAreaView } from 'react-native';
 import Header from './components/Header';
 import Home from './pages/Home/Home';
 import Developers from './pages/Developers/Developers';
-import RestCountries from './pages/RestCountries';
+import RestCountries from './pages/Cat';
 import PokeAPI from './pages/PokeAPI';
 
 function App() {
