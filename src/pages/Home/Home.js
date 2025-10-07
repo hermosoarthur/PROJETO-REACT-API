@@ -16,8 +16,8 @@ const Home = ({ onNavigate }) => {
             onPress={() => onNavigate('restcountries')}
           >
             <View style={styles.cardContent}>
-              <Text style={styles.h3}>REST Countries</Text>
-              <Text style={styles.cardP}>Explore informações sobre países de todo o mundo</Text>
+              <Text style={styles.h3}>REST Cat</Text>
+              <Text style={styles.cardP}>Explore informações sobre todos os tipos de gatos</Text>
               <View style={styles.cardBadge}>
                 <Text style={styles.badgeText}>API 1</Text>
               </View>
