@@ -1,48 +1,63 @@
-// import React from 'react';
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// import React, { useState } from 'react';
+// import { View, StyleSheet } from 'react-native';
 // import Header from './components/Header';
-// import Home from './pages/Home';
+// import Home from './pages/Home/Home';
+// import Developers from './pages/Developers/Developers';
 // import RestCountries from './pages/RestCountries';
 // import PokeAPI from './pages/PokeAPI';
-// import Developers from './pages/Developers';
-// import './App.css';
 
 // function App() {
+//   const [currentScreen, setCurrentScreen] = useState('home');
+
+//   const renderScreen = () => {
+//     switch (currentScreen) {
+//       case 'home':
+//         return <Home onNavigate={setCurrentScreen} />;
+//       case 'developers':
+//         return <Developers onNavigate={setCurrentScreen} />;
+//       case 'restcountries':
+//         return <RestCountries onNavigate={setCurrentScreen} />;
+//       case 'pokeapi':
+//         return <PokeAPI onNavigate={setCurrentScreen} />;
+//       default:
+//         return <Home onNavigate={setCurrentScreen} />;
+//     }
+//   };
+
 //   return (
-//     <Router>
-//       <div className="App">
-//         <Header />
-//         <main>
-//           <Routes>
-//             <Route path="/" element={<Home />} />
-//             <Route path="/api/restcountries" element={<RestCountries />} />
-//             <Route path="/api/pokeapi" element={<PokeAPI />} />
-//             <Route path="/developers" element={<Developers />} />
-//           </Routes>
-//         </main>
-//       </div>
-//     </Router>
+//     <View style={styles.app}>
+//       <Header onNavigate={setCurrentScreen} currentScreen={currentScreen} />
+//       <View style={styles.content}>
+//         {renderScreen()}
+//       </View>
+//     </View>
 //   );
 // }
 
+// const styles = StyleSheet.create({
+//   app: {
+//     flex: 1,
+//     backgroundColor: '#f8f9fa',
+//   },
+//   content: {
+//     flex: 1,
+//     marginTop: 70, // Altura do header + padding
+//   },
+// });
+
 // export default App;
 
-// App.js - SIMPLIFICADO
-
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
-
-// Import das páginas
+import React, { useState } from 'react';
+import { View, StyleSheet, StatusBar, SafeAreaView } from 'react-native';
+import Header from './components/Header';
 import Home from './pages/Home/Home';
 import Developers from './pages/Developers/Developers';
 import RestCountries from './pages/RestCountries';
 import PokeAPI from './pages/PokeAPI';
 
 function App() {
-  // Estado para controlar a tela atual
-  const [currentScreen, setCurrentScreen] = React.useState('home');
+  const [currentScreen, setCurrentScreen] = useState('home');
 
-  // Função para renderizar a tela baseada no estado
   const renderScreen = () => {
     switch (currentScreen) {
       case 'home':
@@ -59,16 +74,29 @@ function App() {
   };
 
   return (
-    <View style={styles.app}>
-      {renderScreen()}
-    </View>
+    <SafeAreaView style={styles.safeArea}>
+      <StatusBar backgroundColor="#2c3e50" barStyle="light-content" />
+      <View style={styles.app}>
+        <Header onNavigate={setCurrentScreen} currentScreen={currentScreen} />
+        <View style={styles.content}>
+          {renderScreen()}
+        </View>
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: '#2c3e50',
+  },
   app: {
     flex: 1,
     backgroundColor: '#f8f9fa',
+  },
+  content: {
+    flex: 1,
   },
 });
 
