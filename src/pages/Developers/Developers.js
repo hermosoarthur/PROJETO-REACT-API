@@ -5,44 +5,44 @@ const Developers = ({ onNavigate }) => {
   const developers = [
     {
       name: "Arthur Hermoso",
-      avatar: "",
+      avatar: require('../../assets/images/arthur.png'),
       github: "https://github.com/hermosoarthur",
-      linkedin: "https://linkedin.com/in/arthur-hermoso",
+      linkedin: "https://www.linkedin.com/in/arthur-hermoso-b17a1a2a7/",
       
     },
     {
-      name: "Desenvolvedor 2",
-      avatar: "",
-      github: "",
-      linkedin: "",
+      name: "Rafaela Santos",
+      avatar: require('../../assets/images/rafaela.png'),
+      github: "https://github.com/Rafa-S68/",
+      linkedin: "https://www.linkedin.com/in/rafaela-santos-rodrigues-57b6a1254",
       
     },
     {
-      name: "Desenvolvedor 3",
-      avatar: "",
-      github: "",
-      linkedin: "",
+      name: "Geovanna Toso",
+      avatar: require('../../assets/images/geovanna.png'),
+      github: "https://github.com/geovannatoso",
+      linkedin: "https://www.linkedin.com/in/geovanna-toso-059320287/",
       
     },
     {
-      name: "Desenvolvedor 4",
-      avatar: "",
-      github: "",
-      linkedin: "",
+      name: "Victoria Rubio",
+      avatar: require('../../assets/images/victoria.png'),
+      github: "https://github.com/vicrubiovic",
+      linkedin: "https://br.linkedin.com/in/victoria-alejandra-rubio-69857b2b8",
       
     },
     {
-      name: "Desenvolvedor 5",
-      avatar: "",
-      github: "",
-      linkedin: "",
+      name: "Joicy Dos Santos",
+      avatar: require('../../assets/images/joicy.png'),
+      github: "https://github.com/Joicy-SantosP",
+      linkedin: "https://www.linkedin.com/in/joicy-dos-santos-pereira-8a6049267",
       
     },
     {
-      name: "Desenvolvedor 6",
-      avatar: "",
-      github: "",
-      linkedin: "",
+      name: "Vitória Moço",
+      avatar: require('../../assets/images/vitoria.png'),
+      github: "https://github.com/vitoriasmo",
+      linkedin: "https://www.linkedin.com/in/vit%C3%B3ria-mo%C3%A7o-049b791b1/",
       
     }
   ];
@@ -70,7 +70,7 @@ const Developers = ({ onNavigate }) => {
             <View key={index} style={styles.developerCard}>
               <View style={styles.developerAvatar}>
                 <Image 
-                  source={{ uri: dev.avatar || defaultAvatar }}
+                  source={dev.avatar ? dev.avatar : { uri: defaultAvatar }}
                   style={styles.avatarImage}
                 />
               </View>
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    gap: 32,
+    gap: 29,
   },
   developerCard: {
     backgroundColor: 'white',
@@ -190,6 +190,9 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     borderRadius: 5,
     minWidth: 80,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   linkButtonDisabled: {
     backgroundColor: '#bdc3c7',
